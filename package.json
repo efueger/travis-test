@@ -5,8 +5,8 @@
 	"main": "./dist/cubitt-cqrs-graph.js",
 	"typings": "./dist/cubitt-cqrs-graph.d.ts",
 	"scripts": {
-		"lint": "tslint -c ./src/tslint.json --force ./src/*.ts",
-		"build": "tsc -p ./src/",
+		"lint": "node_modules/.bin/tslint -c src/tslint.json --force src/*.ts",
+		"build": "tsc -p src/",
 		"test": "cd dist && mocha",
 		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json",
 		"dev": "npm install && cd src && typings install && npm run lint",
