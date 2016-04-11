@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "cd ./src/ && typings install && tsc",
 		"test": "cd dist && mocha",
-		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json",
+		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json && istanbul report lcov",
 		"dev": "npm install && cd src && typings install && npm run lint",
 		"codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
 		"coveralls": "coveralls < ./coverage/lcov.info"
