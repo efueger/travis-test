@@ -6,7 +6,7 @@
 	"typings": "./dist/cubitt-cqrs-graph.d.ts",
 	"scripts": {
 		"build": "cd ./src/ && typings install && tsc",
-		"test": "cd dist && mocha",
+		"test": "cd dist && mocha --require source-map-support/register",
 		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json && istanbul report lcov",
 		"dev": "npm install && cd src && typings install && npm run lint",
 		"codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
@@ -36,6 +36,7 @@
 		"typescript": "^1.8.9",
 		"typings": "^0.7.12",
 		"typedoc": "^0.3.12",
+		"source-map-support": "^0.4.0",
 		"mocha": "^2.4.5",
 		"chai": "^3.5.0",
 		"istanbul": "^0.4.3",
