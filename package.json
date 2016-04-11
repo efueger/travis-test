@@ -5,7 +5,7 @@
 	"main": "./dist/cubitt-cqrs-graph.js",
 	"typings": "./dist/cubitt-cqrs-graph.d.ts",
 	"scripts": {
-		"build": "tsc -p ./src/",
+		"build": "cd ./src/ && typings install && tsc",
 		"test": "cd dist && mocha",
 		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json",
 		"dev": "npm install && cd src && typings install && npm run lint",
