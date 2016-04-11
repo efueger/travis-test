@@ -1,0 +1,53 @@
+{
+	"name": "cubitt-cqrs-graph",
+	"version": "0.1.0",
+	"description": "A CQRS wrapper for the cubitt graph.",
+	"main": "./dist/cubitt-cqrs-graph.js",
+	"typings": "./dist/cubitt-cqrs-graph.d.ts",
+	"scripts": {
+		"lint": "tslint -c ./src/tslint.json --force ./src/*.ts",
+		"build": "tsc -p ./src/",
+		"test": "cd dist && mocha",
+		"test-coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- ./dist/test/ -R spec && remap-istanbul -i ./coverage/coverage.json -o ./coverage/coverage.json",
+		"dev": "npm install && cd src && typings install && npm run lint",
+		"codeclimate": "codeclimate-test-reporter < ./coverage/lcov.info",
+		"coveralls": "coveralls < ./coverage/lcov.info"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:uu-cubitt/cqrs-graph.git"
+	},
+	"keywords": [
+		"cubitt",
+		"cubitt-graph",
+		"cubitt-commands",
+		"cubitt-events",
+		"CQRS"
+	],
+	"contributors": [
+		"Thomas Ipskamp <thomas.ipskamp@gmail.com>",
+		"Sander Klock <sander.klock@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/uu-cubitt/cqrs-graph/issues"
+	},
+	"homepage": "https://uu-cubitt.github.io/cqrs-graph",
+	"devDependencies": {
+		"typescript": "^1.8.9",
+		"typings": "^0.7.12",
+		"typedoc": "^0.3.12",
+		"mocha": "^2.4.5",
+		"chai": "^3.5.0",
+		"istanbul": "^0.4.3",
+		"remap-istanbul": "^0.5.1",
+		"codeclimate-test-reporter": "^0.3.1",
+		"coveralls": "^2.11.9",
+		"gh-pages": "^0.11.0"
+	},
+    "dependencies": {
+        "cubitt-common": "^0.5.0",
+        "cubitt-events": "^0.5.0",
+        "cubitt-graph": "^0.6.1"
+	}
+}
